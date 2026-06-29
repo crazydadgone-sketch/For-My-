@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Special Question ❤️</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#2b0015,#6b0035);
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+text-align:center;
+}
+
+.card{
+width:90%;
+max-width:500px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(12px);
+padding:25px;
+border-radius:20px;
+}
+
+h1,h2{margin-bottom:15px;}
+
+button,input{
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:10px;
+font-size:16px;
+}
+
+button{
+background:#ff4d88;
+color:white;
+cursor:pointer;
+width:100%;
+}
+
+.option{
+display:block;
+padding:12px;
+margin:10px 0;
+background:rgba(255,255,255,0.15);
+border-radius:10px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.option:hover{
+background:#ff4d88;
+}
+
+input[type="date"]{
+width:100%;
+}
+
+#q2,#q3,#done{display:none;}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<!-- QUESTION 1 -->
+<div id="q1">
+<h1>💖 Will you go on a date with me?</h1>
+<button onclick="next1()">Yes ❤️</button>
+</div>
+
+<!-- QUESTION 2 -->
+<div id="q2">
+<h2>📅 So when are you free?</h2>
+<p>Pick a day:</p>
+<input type="date" id="datePick">
+<button onclick="next2()">Next</button>
+</div>
+
+<!-- QUESTION 3 -->
+<div id="q3">
+<h2>🌸 What would you like to do?</h2>
+
+<div class="option" onclick="finish()">🛍 Shopping</div>
+<div class="option" onclick="finish()">🍽 Eating</div>
+<div class="option" onclick="finish()">🛍🍽 Shopping & Eating</div>
+
+</div>
+
+<!-- FINAL -->
+<div id="done">
+<h1>❤️ Thank You ❤️</h1>
+<p>
+I can’t wait for our special day together 🌸
+</p>
+</div>
+
+</div>
+
+<script>
+
+function next1(){
+document.getElementById("q1").style.display="none";
+document.getElementById("q2").style.display="block";
+}
+
+function next2(){
+let date = document.getElementById("datePick").value;
+
+if(date===""){
+alert("Please pick a date ❤️");
+return;
+}
+
+document.getElementById("q2").style.display="none";
+document.getElementById("q3").style.display="block";
+}
+
+function finish(){
+document.getElementById("q3").style.display="none";
+document.getElementById("done").style.display="block";
+}
+
+</script>
+
+</body>
+</html>
